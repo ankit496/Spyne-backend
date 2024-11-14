@@ -5,6 +5,7 @@ const cors=require('cors')
 dotenv.config();
 const authRoutes = require('./routes/authRoutes');
 const carRoutes = require('./routes/carRoutes');
+const {swaggerOptions}=require('./config/swaggerConfig')
 
 const dbUrl = process.env.db_url
 mongoose.connect(dbUrl)
@@ -17,6 +18,8 @@ db.once("open", () => {
 const app = express();
 app.use(express.json());
 app.use(cors("*"))
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use('/api/auth', authRoutes);
 app.use('/api/cars', carRoutes);
 
