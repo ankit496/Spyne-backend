@@ -16,4 +16,4 @@ const swaggerOptions = {
     apis: ['./routes/*.js'], // Path to your route files where Swagger comments are added
 };
 
-module.exports = swaggerOptions;
+module.exports = {swaggerOptions};
