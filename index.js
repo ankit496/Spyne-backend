@@ -6,6 +6,8 @@ dotenv.config();
 const authRoutes = require('./routes/authRoutes');
 const carRoutes = require('./routes/carRoutes');
 const {swaggerOptions}=require('./config/swaggerConfig')
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
 const dbUrl = process.env.db_url
 mongoose.connect(dbUrl)
