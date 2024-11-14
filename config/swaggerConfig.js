@@ -9,10 +9,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: 'http://localhost:5000', // Local server
-            },
-            {
-                url: 'https://spyne-backend-7brv.onrender.com', // Production server
+                url: 'https://spyne-backend-7brv.onrender.com', // Replace with your server URL
             },
         ],
         components: {
